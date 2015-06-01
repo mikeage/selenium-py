@@ -105,7 +105,7 @@ class WebElement(object):
             attributeValue = None
         else:
             attributeValue = resp['value']
-            if name != 'value' and attributeValue.lower() in ('true', 'false'):
+            if name != 'value' and type(attributeValue) is StringType and attributeValue.lower() in ('true', 'false'):
                 attributeValue = attributeValue.lower()
         return attributeValue
 
